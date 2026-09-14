@@ -2,3 +2,6 @@ logs/
 database/
 output/
 data/orders.csv
+.pytest_cache/
+__pycache__/
+notebook/lesson_memo.md

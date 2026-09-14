@@ -1,0 +1,6 @@
+{
+    "log": {
+        "level": "INFO",
+        "file_path": "logs/ec_sales_analysis.log"
+    }
+}

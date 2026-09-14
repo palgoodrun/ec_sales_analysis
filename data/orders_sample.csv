@@ -1,0 +1,11 @@
+order_date,category,sales_channel,quantity,sales_amount,is_cancelled
+2026-01-05,Water Server,EC,1,3980,0
+2026-01-05,Cosmetics,Amazon,2,5200,0
+2026-01-06,Water Server,Rakuten,1,3980,0
+2026-01-06,Food,EC,3,2400,0
+2026-01-07,Cosmetics,Amazon,1,0,1
+2026-01-08,Water Server,EC,2,7960,0
+2026-01-08,Food,Rakuten,4,3200,0
+2026-02-09,Cosmetics,EC,2,5100,0
+2026-02-09,Water Server,Amazon,1,0,1
+2026-02-10,Food,EC,5,4000,0

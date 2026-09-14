@@ -1,0 +1,18 @@
+{
+    "input": {
+        "data_dir": "data",
+        "data_file": "orders.csv"
+    },
+    "database": {
+        "db_dir": "database",
+        "db_file": "orders.db",
+        "table_name": "orders"
+    },
+    "thresholds": {
+        "cancellation_threshold": 20
+    },
+    "output": {
+        "output_dir": "output",
+        "output_file": "ec_sales_analysis.xlsx"
+    }
+}
