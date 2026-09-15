@@ -3,13 +3,27 @@
 ## 作成日
 
 - 作成日: 2026年9月2日
-- 更新日: 2026年9月2日(初版)
+- 更新日: 2026年9月15日(初版)
+- 　　　: 2026年9月15日(第2版: GitHub公開用内容修正)
 
 ## 概要
 - ECサイトの売り上げCSVのデータをSQLiteデータベースに保存します
 - SQLでキーごとに集計し、評価するデータフレームを生成します
 - データフレームはKPIを追加後評価し判定項目を追加します
 - 生成したデータフレームはExcelファイルで出力されます
+
+## 環境構築
+
+requirements.txtに記載された、ツールの実行・テストに必要なライブラリをインストールします。
+
+### インストール内容とバージョン
+- pandas==2.3.3
+- openpyxl==3.1.5
+- pytest==9.1.1
+
+### 実行方法
+
+python -m pip install -r requirements.txt
 
 ## 主な機能
 
@@ -94,10 +108,12 @@ month × category の組み合わせ単位で集計する
 
 data / orders.csv
 
-### 必要な列
+> サンプルデータには「data / orders_sample.csv」が格納されています
+> 実行時には初期設定を以下のどちらかに変更してください
+ - ファイル名を「orders.csv」に変更
+ - 「config - input - data_file」を「 orders_sample.csv」に変更
 
-- order_id
-> 任意入力
+### 必要な列
 
 - order_date
 > 入力必須
@@ -111,9 +127,6 @@ data / orders.csv
 
 - sales_channel
 > 入力必須
-
-- region
-> 任意入力
 
 - quantity
 > 入力必須
@@ -186,47 +199,45 @@ output/ec_sales_analysis.xlsx
 
 ## ディレクトリ構成
 
+```text
 C:.
-├─config
-│      config.json
-│      log_config.json
-│
-├─data
-│      orders.csv
-│
-├─database
-│      orders.db
-│
-├─logs
-│      ec_sales_analysis.log
-│
-├─modules
-│      config_loader.py
-│      config_validator.py
-│      database_manager.py
-│      dataframe_formatter.py
-│      kpi_calculator.py
-│      kpi_evaluator.py
-│      logger_setup.py
-│      pandas_aggregator.py
-│      result_exporter.py
-│      sql_aggregator.py
-│      sql_queries.py
-│
-├─notebook
-│      lesson_memo.md
-│      README.md
-│
-├─output
-│      ec_sales_analysis.xlsx
-│
-├─scripts
-│      main.py
-│
-└─tests
-       test_aggregators.py
-       test_config_validator.py
-       test_kpi_evaluator.py
+|   README.md
+|   requirements.txt
+|
++---config
+|       config.json
+|       log_config.json
+|
++---data
+|       orders_sample.csv
+|
++---logs # 実行時に生成（Git管理対象外）
+|       ec_sales_analysis.log
+|
++---modules
+|       config_loader.py
+|       config_validator.py
+|       database_manager.py
+|       dataframe_formatter.py
+|       kpi_calculator.py
+|       kpi_evaluator.py
+|       logger_setup.py
+|       pandas_aggregator.py
+|       result_exporter.py
+|       sql_aggregator.py
+|       sql_queries.py
+|
++---output # 実行時に生成（Git管理対象外）
+|       ec_sales_analysis.xlsx
+|
++---scripts
+|       main.py
+|
+\---tests
+        test_aggregators.py
+        test_config_validator.py
+        test_kpi_evaluator.py
+```
 
 ## テスト
 
