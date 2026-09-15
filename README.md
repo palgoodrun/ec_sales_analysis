@@ -263,3 +263,5 @@ C:.
 python -m pytest tests -v
 
 ## 補足
+
+## Clone Test
